@@ -100,13 +100,6 @@ Indented code
     line 2 of code
     line 3 of code
 
-
-Block code "fences"
-
-```
-Sample text here...
-```
-
 Syntax highlighting
 
 ``` js
