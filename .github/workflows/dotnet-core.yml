@@ -20,4 +20,12 @@ jobs:
       working-directory: ./Blogs
       run: | 
         dotnet tool install --global MD-Gist
-        md-gist parse -t=${{secrets.GIST_TOKEN}}
+        md-gist parse -t=${{secrets.GIST_TOKEN}}        
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add .
+        git commit -m "Add changes" -a
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GIST_TOKEN }}
